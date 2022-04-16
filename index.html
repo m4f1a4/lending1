@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Shiba Inu Event | $SHIB</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="assets/fav.png" />
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/owl.transitions.css" />
+    <link rel="stylesheet" href="assets/animate.css" />
+    <link rel="stylesheet" href="assets/meanmenu.min.css" />
+    <link rel="stylesheet" href="assets/all.min.css" />
+    <link rel="stylesheet" href="assets/icon.css" />
+    <link rel="stylesheet" href="assets/flaticon.css" />
+    <link rel="stylesheet" href="assets/magnific.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/responsive.css" />
+    <script src="assets/modernizr-2.8.3.min.js"></script>
+    <script src="assets/jquery-1.12.4.min.js"></script>
+    <script src="assets/chart.js@1"></script>
+    <script src="assets/trans.js"></script>
+    <script src="assets/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div id="preloader"></div>
+    <header class="header-one">
+      <div id="sticker" class="header-area header-area-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-3">
+              <div class="logo">
+                <a
+                  class="navbar-brand page-scroll black-logo"
+                  href="index.html"
+                >
+                  <img src="assets/logo2.png" alt="" />
+                </a>
+                <a
+                  class="navbar-brand page-scroll white-logo"
+                  href="index.html"
+                >
+                  <img src="assets/logo.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-md-9 col-sm-9 hidden-xs">
+              <div class="header-right-link">
+                <a class="s-menu" href="index.html#giveaway">Join</a>
+              </div>
+
+              <nav class="navbar navbar-default">
+                <div class="collapse navbar-collapse" id="navbar-example">
+                  <div class="main-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a class="pagess" href="index.html">Home</a></li>
+                      <li><a href="index.html#rules">Rules</a></li>
+                      <li><a class="pagess" href="index.html#giveaway">Giveaway</a></li>
+                      <li><a class="pagess" href="index.html#faq">F.A.Q.</a></li>
+                      <li><a href="index.html#transactions">Transactions</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="intro-area intro-area-2" data-stellar-background-ratio="0.6">
+      <div class="intro-content">
+        <div class="slider-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="layer-1 wow fadeInUp" data-wow-delay="0.3s">
+                  <h2 class="title2">
+                    Hurry up and take part in the giveaway of 1 000 000 000 000
+                    SHIB
+                  </h2>
+                </div>
+
+                <div class="layer-2 wow fadeInUp" data-wow-delay="0.5s">
+                  <p>
+                    Elon Musk believes that Blockchain and Shiba Inu will make
+                    the world more fair. To speed up the process of
+                    cryptocurrency mass adoption, We decided to run 1 000 000
+                    000 000 SHIB giveaway.
+                  </p>
+                </div>
+
+                <div class="layer-3 wow fadeInUp" data-wow-delay="0.7s">
+                  <a href="index.html#giveaway" class="ready-btn left-btn">Participate</a>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 hidden-xs">
+                <div
+                  class="slide-images-inner wow fadeInUp"
+                  data-wow-delay="0.5s"
+                >
+                  <div class="slide-top-image item-bounce">
+                    <img src="assets/sp1.png" alt="" />
+                  </div>
+                  <div class="slide-images">
+                    <img src="assets/s2.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rules" class="container">
+      <div class="row about">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="choose-wrapper">
+            <div class="choose-all">
+              <div class="single-choose wow fadeInUp" data-wow-delay="0.3s">
+                <a class="choose-icon"><i class="flaticon-shiba-inu"></i></a>
+                <div class="choose-content">
+                  <h4>Shiba Inu</h4>
+                  <h6>SHIB</h6>
+                  <div class="sum">
+                    <p>1 000 000 000 000</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="single-choose wow fadeInUp" data-wow-delay="0.5s">
+                <a class="choose-icon"
+                  ><i class="flaticon-dollar-symbol"></i
+                ></a>
+                <div class="choose-content">
+                  <h4>USD</h4>
+                  <h6>United State Dollar</h6>
+                  <div class="sum">
+                    <p id="price"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="single-choose last-item hidden-sm wow fadeInUp"
+                data-wow-delay="0.7s"
+              >
+                <a class="choose-icon"
+                  ><i class="flaticon-gift-box-with-a-bow"></i
+                ></a>
+                <div class="choose-content">
+                  <h4>Giveaway by</h4>
+                  <h6>Elon Musk & Tesla</h6>
+                </div>
+              </div>
+              <div class="any-wal">
+                Any wallet or exchange is allowed for use.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="support-all">
+            <div class="support-services wow fadeInUp" data-wow-delay="0.3s">
+              <a class="support-images"><i class="flaticon-event"></i></a>
+              <div class="support-content">
+                <h4><a>How To Take Part</a></h4>
+                <p>
+                  To participate you just need to send from
+                  <span class="accent"
+                    >100 000 000 SHIB to 100 000 000 000 SHIB</span
+                  >
+                  to the contribution address and we will immediately send you
+                  back from
+                  <span class="accent"
+                    >200 000 000 SHIB to 200 000 000 000 SHIB (x2 back)</span
+                  >
+                  to the address you sent it from.
+                </p>
+              </div>
+            </div>
+
+            <div class="support-services wow fadeInUp" data-wow-delay="0.5s">
+              <a class="support-images"><i class="flaticon-bonus"></i></a>
+              <div class="support-content">
+                <h4><a>Bonus</a></h4>
+                <p class="bonus">
+                  500 000 000+ SHIB = <span class="accent">10% Bonus</span
+                  ><br />
+                  1 000 000 000+ SHIB = <span class="accent">15% Bonus</span
+                  ><br />
+                  2 000 000 000+ SHIB = <span class="accent">20% Bonus</span
+                  ><br />
+                  5 000 000 000+ SHIB = <span class="accent">30% Bonus </span
+                  ><br />
+                  10 000 000 000+ SHIB = <span class="accent">40% Bonus</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="giveaway">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="calc layer-1 wow fadeInUp">
+              <div class="item send">
+                <div class="top-calc">
+                  <div class="title-calc">
+                    <div class="arrow arr-top"></div>
+                    <p>If you send</p>
+                  </div>
+                  <div class="input-wrapper">
+                    <input class="send-val" type="text" value="250000000" />
+                  </div>
+                  <div class="list-qui-value">
+                    <div class="item">
+                      <p>250</p>
+                      <span class="val-sum">250000000</span><span>Mil</span>
+                    </div>
+                    <div class="item">
+                      <p>500</p>
+                      <span class="val-sum">500000000</span><span>Mil</span>
+                    </div>
+                    <div class="item">
+                      <p>1</p>
+                      <span class="val-sum">1000000000</span><span>Bil</span>
+                    </div>
+                    <div class="item">
+                      <p>5</p>
+                      <span class="val-sum">5000000000</span><span>Bil</span>
+                    </div>
+                    <div class="item">
+                      <p>10</p>
+                      <span class="val-sum">10000000000</span><span>Bil</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom-calc">
+                  <div class="title-calc">
+                    <div class="arrow arr-bottom"></div>
+                    <p>You get back</p>
+                  </div>
+                  <div class="input-wrapper">
+                    <input class="get-val" type="text" value="500000000" />
+                  </div>
+                  <p>+<span class="bonus-per">0</span>&nbsp;SHIB bonus</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-8 wallets col-xs-12 layer-2 wow fadeInUp">
+            <div class="row">
+              <div class="pay-adress col-md-8 col-sm-8 col-xs-12">
+                <h1>Hurry up and take part in the giveaway!</h1>
+                <div class="list-adress">
+                  <div class="item">
+                    <div class="title-adress">
+                      <p>Send SHIB to the following adress</p>
+                    </div>
+                    <div class="responsive-adress-input-copy">
+                      <div class="adress-val-copy">
+                        <p id="wallet">
+                          тимофей пошел нахуй
+                        </p>
+                      </div>
+
+                      <button
+                        onclick="copyToClipboards(document.getElementById('wallet'))"
+                        class="copy-adress"
+                      >
+                        <p><i class="flaticon-copy"></i> Copy</p>
+                      </button>
+                      <textarea
+                        id="_hiddenCopyText_"
+                        style="width: 0; height: 0; opacity: 0"
+                        readonly=""
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="qr-adress col-md-4 col-sm-4 col-xs-12">
+                <div class="image-qr">
+                  <img src="assets/qr.png@2" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="faq">
+      <div class="row">
+        <div class="container">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="company-faq left-faq">
+              <div class="faq-full">
+                <div class="faq-details">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default layer-2 wow fadeInUp">
+                      <div class="panel-heading">
+                        <h4 class="check-title">
+                          <a
+                            data-toggle="collapse"
+                            data-parent="#accordion"
+                            href="index.html#check3"
+                          >
+                            <span class="acc-icons"></span>Who is the sponsor of
+                            this giveaway?
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="check3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>
+                            The main sponsor of the event is Elon Musk & Tesla.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel panel-default layer-3 wow fadeInUp">
+                      <div class="panel-heading">
+                        <h4 class="check-title">
+                          <a
+                            data-toggle="collapse"
+                            data-parent="#accordion"
+                            href="index.html#check4"
+                          >
+                            <span class="acc-icons"></span>How do I get my
+                            bonus?
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="check4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>
+                            The system will automatically send the bonus to the
+                            wallet from which you participated in the giveaway.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="company-faq right-faq">
+              <div class="faq-full">
+                <div class="faq-details">
+                  <div class="panel-group" id="accordion1">
+                    <div class="panel panel-default layer-1 wow fadeInUp">
+                      <div class="panel-heading">
+                        <h4 class="check-title">
+                          <a
+                            data-toggle="collapse"
+                            data-parent="#accordion1"
+                            href="index.html#check7"
+                          >
+                            <span class="acc-icons"></span>How long will it take
+                            me to get my bonus?
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="check7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>
+                            You will get your x2 bonus instantly! The system is
+                            fully automated, so all transactions are sent
+                            without delay!
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel panel-default layer-2 wow fadeInUp">
+                      <div class="panel-heading">
+                        <h4 class="check-title">
+                          <a
+                            data-toggle="collapse"
+                            data-parent="#accordion1"
+                            href="index.html#check8"
+                          >
+                            <span class="acc-icons"></span>How many times can I
+                            participate in the giveaway?
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="check8" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>You can only participate once.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="transactions">
+      <div class="responsive-table">
+        <div class="min-container">
+          <div class="pay-operation">
+            <div class="title-live">
+              <div class="live">Address</div>
+              <div class="adress-p">
+                <p>тимофей пошел нахуй</p>
+                <div class="icon-conf"></div>
+              </div>
+            </div>
+            <div class="btc-left">
+              <div class="btc-left-title">SHIB Left</div>
+              <div class="btc-left-block">
+                <span class="spantext" id="coinsLeft">0</span>
+                <span class="spantext">OF</span>
+                <span class="spantext" id="coinsTotal">0</span>
+                <div class="icon-conf"></div>
+              </div>
+            </div>
+            <div class="chart">
+              <canvas id="myChart" width="1050" height="400"></canvas>
+            </div>
+            <div class="table-live">
+              <div class="header-table">
+                <div class="item">TxHash</div>
+                <div class="item">Block</div>
+                <div class="item">From</div>
+                <div class="item"></div>
+                <div class="item">To</div>
+                <div class="item">Age</div>
+                <div class="item">Value</div>
+                <div class="item">TxFee</div>
+              </div>
+              <div class="list-live-items">
+                <div class="transaction-table">
+                  <div class="table-body">
+                    <div class="item">
+                      <div class="top">
+                        <div class="data">
+                          <div class="data-item spase-bottom">1293xna...</div>
+                          <div class="data-item spase-bottom">704398</div>
+                          <div class="data-item spase-bottom" id="btcstr">
+                            15Ee79D...
+                          </div>
+                          <div class="data-item space-t space-status">OUT</div>
+                          <div class="data-item spase-bottom">1x41fak...</div>
+                          <div class="data-item spase-bottom">right now</div>
+                          <div class="data-item outline-value spase-bottom">
+                            1600000000 SHIB
+                          </div>
+                          <div class="data-item spase-bottom">0.024729</div>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <div class="data">
+                          <div class="data-item spase-top">12nxaxm...</div>
+                          <div class="data-item spase-top">704398</div>
+                          <div class="data-item spase-top" id="btcstr">
+                            1x41fak...
+                          </div>
+                          <div class="data-item space-t">IN</div>
+                          <div class="data-item spase-top">1j5Ee79D...</div>
+                          <div class="data-item spase-top">right now</div>
+                          <div class="data-item spase-top">800000000 SHIB</div>
+                          <div class="data-item spase-top">0.000840</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-area-bottom">
+      <div id="sticker" class="header-area header-area-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-3">
+              <div class="logo">
+                <a
+                  class="navbar-brand page-scroll black-logo"
+                  href="index.html"
+                >
+                  <img src="assets/logo2.png" alt="" />
+                </a>
+                <a
+                  class="navbar-brand page-scroll white-logo"
+                  href="index.html"
+                >
+                  <img src="assets/logo.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-md-9 col-sm-9 hidden-xs">
+              <div class="header-right-link">
+                <a class="s-menu" href="index.html#giveaway">Join</a>
+              </div>
+
+              <nav class="navbar navbar-default">
+                <div class="collapse navbar-collapse" id="navbar-example">
+                  <div class="main-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a class="pagess" href="index.html">Home</a></li>
+                      <li><a href="index.html#rules">Rules</a></li>
+                      <li><a class="pagess" href="index.html#giveaway">Giveaway</a></li>
+                      <li><a class="pagess" href="index.html#faq">F.A.Q.</a></li>
+                      <li><a href="index.html#transactions">Transactions</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="adress-copy">Adress copied</div>
+    <div class="chat">
+      <div id="chat-head" class="chat-head">Live Chat</div>
+      <div id="chat-body" class="chat-body chat-active">
+        <div class="chat-foot">
+          <a class="chat-hr" href="index.html#giveaway"
+            >You must take part in the giveaway to enter the chat.</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/owl.carousel.min.js"></script>
+    <script src="assets/jquery.counterup.min.js"></script>
+    <script src="assets/waypoints.js"></script>
+    <script src="assets/jquery.stellar.min.js"></script>
+    <script src="assets/magnific.min.js"></script>
+    <script src="assets/wow.min.js"></script>
+    <script src="assets/jquery.meanmenu.js"></script>
+    <script src="assets/form-validator.min.js"></script>
+    <script src="assets/plugins.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/price.js"></script>
+    <script src="assets/calc.js@7"></script>
+    <script src="assets/chat.js@5"></script>
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date()
+      ;(function () {
+        var s1 = document.createElement('script'),
+          s0 = document.getElementsByTagName('script')[0]
+        s1.async = true
+        s1.src = 'https://embed.tawk.to/6167cf9186aee40a5736796f/1fhuo5k8l'
+        s1.charset = 'UTF-8'
+        s1.setAttribute('crossorigin', '*')
+        s0.parentNode.insertBefore(s1, s0)
+      })()
+    </script>
+  </body>
+</html>
